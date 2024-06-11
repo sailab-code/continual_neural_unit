@@ -25,8 +25,6 @@ QUICK START: defining a Continual Neural Unit (CNU)
 --------------------------
 Have a look at the [Colab Notebook](https://github.com/mtiezzi/continual_neural_unit/blob/main/example_cnu.ipynb) for a complete example on how to define and use the Memory Head!
 
-We also provide example scripts in the `ocdi/d2d/example_2d_mh.py` path. 
-
 
 USAGE EXAMPLE
 -------------
