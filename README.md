@@ -38,7 +38,7 @@ A very tiny example. If you would create a vanilla Linear layer in PyTorch as fo
         ).to(device)
 
 
-Then, you can easily define and use a layer composed by Continual Neural Units Units (with the online K-means update procedure described in the main paper) as follows:
+Then, you can easily define and use a layer composed by Continual Neural Units (with the online K-means update procedure described in the main paper) as follows:
 
         net = nn.Sequential(
             nn.Linear(in_features=d, out_features=10, bias=True),
