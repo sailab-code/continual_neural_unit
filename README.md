@@ -1,6 +1,62 @@
-# Anonymous submission
 
-Paper Title: **Continual Neural Computation**
+<div align="center">
+  
+  <div>
+  <h1>Continual Neural Computation</h1>
+  </div>
+
+  <div>
+      Matteo Tiezzi &emsp; Simone Marullo &emsp; Federico Becattini &emsp;  Stefano Melacci
+  </div>
+  <br/>
+
+</div>
+
+![alt text](img/cnu.png "Continual Neural Unit")
+
+
+This repo contains the PyTorch code for ECML-PKDD 2024 paper "[Continual Neural Computation](tba)".
+
+![alt text](img/dec.png "Decision boundaries")
+
+
+QUICK START: defining a Continual Neural Unit (CNU)
+--------------------------
+Have a look at the [Colab Notebook](https://github.com/mtiezzi/memory_head/blob/main/mh_example.ipynb) for a complete example on how to define and use the Memory Head!
+
+We also provide example scripts in the `ocdi/d2d/example_2d_mh.py` path. 
+
+
+USAGE EXAMPLE
+-------------
+
+A very tiny example. If you would create a vanilla Linear layer in PyTorch as follows:
+
+        net = nn.Sequential(
+            nn.Linear(in_features=d, out_features=10, bias=True),
+            nn.Tanh(),
+            nn.Linear(in_features=10, out_features=c, bias=True)
+        ).to(device)
+
+
+Then, you can easily define and use a layer composed by Continual Neural Units Units (with the online K-means update procedure described in the main paper) as follows:
+
+        net = nn.Sequential(
+            nn.Linear(in_features=d, out_features=10, bias=True),
+            nn.Tanh(),
+            CNULinear(in_features=10, out_features=c, bias=True,
+                    key_mem_units=10,
+                    upd_m="WTA",  # choices=["vanilla", "WTA"]
+                    upd_k="ad_hoc_WTA",  # choices=["ad_hoc_WTA", "grad_WTA", "grad_not_WTA"]
+                    beta_k=0.01,
+                    gamma_alpha=25.0, tau_alpha=0.95,
+                    tau_mu=50,
+                    tau_eta=50, scramble=True,
+                    delta=2,
+                    distance="euclidean",  # choices=["cosine", "euclidean", "dot_scaled"]
+                    )
+        ).to(device)
+
 
 
 CODE REPOSITORY CONTENTS
