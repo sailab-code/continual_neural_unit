@@ -12,7 +12,7 @@
 
 </div>
 
-![alt text](img/cnu.png "Continual Neural Unit)
+![alt text](img/cnu.png "Continual Neural Unit")
 
 
 This repo contains the PyTorch code for ECML-PKDD 2024 paper "[Continual Neural Computation](tba)".
