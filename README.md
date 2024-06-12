@@ -12,19 +12,18 @@
 
 </div>
 
-![alt text](img/cnu.png "Continual Neural Unit")
-
 
 This repo contains the PyTorch code for ECML-PKDD 2024 paper "[Continual Neural Computation](tba)".
 
-![alt text](img/dec.png "Decision boundaries")
+
+![alt text](img/cnu.png "Continual Neural Unit")
+
+
 
 
 QUICK START: defining a Continual Neural Unit (CNU)
 --------------------------
-Have a look at the [Colab Notebook](https://github.com/mtiezzi/memory_head/blob/main/mh_example.ipynb) for a complete example on how to define and use the Memory Head!
-
-We also provide example scripts in the `ocdi/d2d/example_2d_mh.py` path. 
+Have a look at the [Colab Notebook](https://github.com/mtiezzi/continual_neural_unit/blob/main/example_cnu.ipynb) for a complete example on how to define and use the Memory Head!
 
 
 USAGE EXAMPLE
@@ -39,7 +38,7 @@ A very tiny example. If you would create a vanilla Linear layer in PyTorch as fo
         ).to(device)
 
 
-Then, you can easily define and use a layer composed by Continual Neural Units Units (with the online K-means update procedure described in the main paper) as follows:
+Then, you can easily define and use a layer composed by Continual Neural Units (with the online K-means update procedure described in the main paper) as follows:
 
         net = nn.Sequential(
             nn.Linear(in_features=d, out_features=10, bias=True),
